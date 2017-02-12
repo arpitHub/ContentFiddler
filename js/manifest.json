@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome Extension for Normalising the data on webpage",
+  "version": "1.0",
+  "background": {
+    "persistent": false,
+    "scripts": ["test.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://*.library.upenn.edu/*", "*://*.buzzfeed.com/*","*://*.apastyle.org/*", "*://*.stackoverflow.com/*"],
+    "js": ["jquery.min.js","popup.js"]
+  }],
+  "browser_action": {
+    "default_title": "Stop clickbait"
+  },
+
+  "permissions": ["http://localhost/*","activeTab"]
+}
